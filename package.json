@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "parcel ./src/index.html",
-    "prestart": "npm install"
+    "start": "parcel ./src/index.html"
   },
   "author": "",
   "license": "ISC",
