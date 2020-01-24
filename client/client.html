@@ -119,41 +119,28 @@
   <h1>Russ' OSRS Helper</h1>
 
   <div class='nav'>
-      <a href='index.html' class='nav-link'>Home</a>
-      <a href="droprate.html" class='nav-link'>Drop Rate</a>
+      <a href='ge.html' class='nav-link'>Grand Exchange</a>
+      <a href='droprate.html' class='nav-link'>Drop Rate</a>
   </div>
 
-  <form id='item-form' autocomplete="off" action="/action_page.php">
-      <div class='autocomplete' style='width:300px'>
-          <input id='itemInput' type='text' name='itemInupt' placeholder='Item' />
-      </div>
-      <input type='submit' id='submit-btn'/>
-  </form>
-  
-  <div class="lds-roller" id='lds-roller-id'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-  <svg id='chart'></svg>
-  <div id="tooltip" class="hidden">
-      <p><strong>Price</strong></p>
-      <p><span id="price"></span></p>
-      <p><strong>Date</strong></p>
-      <p><span id='date'>1</span></p>
-  </div>
-
-  <div id='item-information'>
-      <h2 id='item-name'></h2>
-      <h4 id='description'></h4>
-      <img id='item-img' src=''/>
-      <h3 id='current-price'></h3>
-      <h4>High Alch</h4><h4 id='high-alch'></h4>
-      <h4>Low Alch</h4><h4 id='low-alch'></h4>
-      <h5>30 Day Trend</h5><h5 id='trend-30'></h5>
-      <h5>90 Day Trend</h5><h5 id='trend-90'></h5>
-      <h5>180 Day Trend</h5><h5 id='trend-180'></h5>
-  </div>
-
-  <script src='./ge.js'></script>
-  <script src='./autocompletelist.js'></script>
-  <script src='./util.js'></script>
-
+  <h2 id='welcome-text'>Welcome to Russ' OSRS Helper! Current tools are the Grand Exchange Tracker and the Drop Calculator</h2>
+  <h3 class='intro-title'>Grand Exchange:</h3>
+  <p class='intro-text'>
+      The Grand Exchange Calculator uses the average sale of the last 180 days. All tradable items, both F2P and P2P can be
+      looked up for their prices. Along with day to day prices, the items trend can be viewed, perfect for merching. Along
+      with the graph, the items are displayed with their low and high alchemy values, and percentages of increase/decrease in price 
+      over the last 30, 90 and 180 days.
+  </p>
+  <h3 class='intro-title'>Drop Rate Calc:</h3>
+  <p class='intro-text'>
+      The drop rate calculator will help show a visual representation for where you stand based on your current kill count for a drop
+      and the probability you would have received the drop by now, along with the chance over either double your current kill count or
+      the drop rate (whichever is larger). There is also a built in feature for pet kill counts. You may toggle that option, enter your
+      RSN and which boss you would like to calculate. The information will be pulled from the most recently update OSRS hiscores page. 
+      If your numbers seem in correct, you may need to log out or view your collection log to make sure it properly updates.
+  </p>
+  <footer>
+      <small id='footer'>&copy; Copyright 2019, Russell Perlow</small>
+  </footer>
 </body>
 </html>

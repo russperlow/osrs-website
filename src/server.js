@@ -41,28 +41,42 @@ const handleHead = (request, response, parsedUrl) => {
 };
 
 const handleGet = (request, response, parsedUrl) => {
-    if(parsedUrl.pathname === '/'){
-        htmlHandler.getIndex(request, response);
-    }else if(parsedUrl.pathname === '/main.css'){
-        htmlHandler.getCSS(request, response)
-    }else if(parsedUrl.pathname === '/getUsers'){
-        jsonHandler.getUsers(request, response);
-    }else if(parsedUrl.pathname === '/util.js'){
-        jsHandler.getUtil(request, response)
-    }else if(parsedUrl.pathname === '/ge.js'){
-        jsHandler.getGe(request, response)
-    }else if(parsedUrl.pathname === '/autocompletelist.js'){
-        jsHandler.getAutocomplete(request, response)
-    }else if(parsedUrl.pathname === '/item-keys.json'){
-        jsonHandler.getItemKeys(request, response);
-    }else{
-        jsonHandler.notReal(request, response);
+    switch(parsedUrl.pathname){
+        case '/main.css':
+            htmlHandler.getCSS(request, response);
+            break;
+        case '/ge.html':
+            htmlHandler.getGe(request, response);
+            break;
+        case '/droprate.html':
+            htmlHandler.getDroprate(request, response);
+            break;
+        case '/util.js':
+            jsHandler.getUtil(request, response);
+            break;
+        case '/ge.js':
+            jsHandler.getGe(request, response);
+            break;
+        case '/droprate.js':
+            jsHandler.getDroprate(request, response);
+            break;
+        case '/autocompletelist.js':
+            jsHandler.getAutocomplete(request, response)
+            break;
+        case '/item-keys.json':
+            jsonHandler.getItemKeys(request, response);
+            break;
+        default:
+            htmlHandler.getIndex(request, response);
+            break;
     }
+
+    //     jsonHandler.getUsers(request, response);
 };
 
 const onRequest = (request, response) => {
     const parsedUrl = url.parse(request.url);
-    //console.log(request);
+
     if(request.method === 'POST'){
         handlePost(request, response, parsedUrl);
     }else if(request.method === 'HEAD'){

@@ -113,8 +113,8 @@ let playerInfo = [
     'Alchemical Hydra',
     'Barrows Chests',
     'Bryophyta',
-    //'Callisto', // For some reason this boss isnt returned by hiscores
-    //'Cerberus', // Also for some reason this boss isnt returned by hiscores
+    'Callisto', // For some reason this boss isnt returned by hiscores
+    'Cerberus', // Also for some reason this boss isnt returned by hiscores
     'Chambers of Xeric',
     'Chambers of Xeric: Challenge Mode',
     'Chaos Elemental',
