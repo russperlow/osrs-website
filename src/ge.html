@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line Chart</title>
+    <meta charset="utf-8">
+    
+    <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Russ' OSRS Helper</h1>
+
+    <div class='nav'>
+        <a href='index.html' class='nav-link'>Home</a>
+        <a href="droprate.html" class='nav-link'>Drop Rate</a>
+    </div>
+
+    <form id='item-form' autocomplete="off" action="/action_page.php">
+        <div class='autocomplete' style='width:300px'>
+            <input id='itemInput' type='text' name='itemInupt' placeholder='Item' />
+        </div>
+        <input type='submit' id='submit-btn'/>
+    </form>
+    
+    <div class="lds-roller" id='lds-roller-id'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <svg id='chart'></svg>
+    <div id="tooltip" class="hidden">
+        <p><strong>Price</strong></p>
+        <p><span id="price"></span></p>
+        <p><strong>Date</strong></p>
+        <p><span id='date'>1</span></p>
+    </div>
+
+    <div id='item-information'>
+        <h2 id='item-name'></h2>
+        <h4 id='description'></h4>
+        <img id='item-img' src=''/>
+        <h3 id='current-price'></h3>
+        <h4>High Alch</h4><h4 id='high-alch'></h4>
+        <h4>Low Alch</h4><h4 id='low-alch'></h4>
+        <h5>30 Day Trend</h5><h5 id='trend-30'></h5>
+        <h5>90 Day Trend</h5><h5 id='trend-90'></h5>
+        <h5>180 Day Trend</h5><h5 id='trend-180'></h5>
+    </div>
+
+    <script src='./main.js'></script>
+    <script src='./autocompletelist.js'></script>
+    <script src='./util.js'></script>
+</body>
+<footer>
+    <small>&copy; Copyright 2019, Russell Perlow</small>
+</footer>
+</html>

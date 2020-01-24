@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line Chart</title>
+    <meta charset="utf-8">
+    
+    <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Russ' Drop Rate Calculator</h1>
+        
+    <div class='nav'>
+        <a href='index.html' class='nav-link'>Home</a>
+        <a href="ge.html" class='nav-link'>Grand Exchange</a>
+    </div>
+
+    <div id='slider-div'>
+        <label id='man-input-label'>Manual Input</label>
+        <label class="switch">
+            <input type="checkbox" id='checkbox-slider'>
+            <span class="slider round"></span>
+        </label>
+        <label id='boss-lookup-label'>Boss Pet Lookup</label>
+    </div>
+    <div class="lds-roller" id='lds-roller-id'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+    <form id='general-graph'>
+        <label>Kills</label>
+        <input type="number" id="kill-input" value='500'/>
+        <label>Drop Chance Numerator (top):</label>
+        <input type="number" id="drop-nume-input" value='1'/>
+        <label>Drop Chance Denominator (bottom):</label>
+        <input type="number" id="drop-denom-input" value='3000'/>
+        <input type='submit' id='submit-btn-general'/>
+    </form>
+    <form id='player-boss-lookup' class='hidden'>
+        <label>Player:</label>
+        <input id='player-name' value='OldMiami' />
+        <label>Boss:</label>
+        <select id='boss-select'>
+            <!-- <option value='Abyssal Sire'>Abyssal Sire</option>
+            <option value='Kraken' selected>Kraken</option> -->
+        </select>
+        <input type='submit' id='look-up-btn' value='Look up'/>
+    </form>
+    <p id='output'></p>
+    <p id='quip'></p>
+    <svg id='chart'></svg>
+    <div id="tooltip" class="hidden">
+        <p><strong>Kill Count:</strong></p>
+        <p><span id="killcount"></span></p>
+        <p><strong>Probability of Drop:</strong></p>
+        <p><span id='probability'>1%</span></p>
+    </div>
+
+    <script src='./util.js'></script>
+    <script src='./droprate.js'></script>
+</body>
+<footer>
+    <small>&copy; Copyright 2019, Russell Perlow</small>
+</footer>
+</html>
