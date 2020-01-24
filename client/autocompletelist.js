@@ -30,7 +30,7 @@ function autocomplete(input, array){
         this.parentNode.appendChild(a);
 
         for(let i = 0; i < array.length; i++){
-            if(array[i].substr(0, val.length).toUpperCase() == val.toUpperCase()){
+            if(array[i].toUpperCase().includes(val.toUpperCase())){
                 b = document.createElement('div');
                 b.className = 'list-item';
                 b.innerHTML = `<strong> ${array[i].substring(0, val.length)}</strong> ${array[i].substring(val.length)} <input type='hidden' value="${array[i]}">`;

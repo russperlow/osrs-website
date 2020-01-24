@@ -23,7 +23,7 @@
 //   makeGraph(daily, average);
 	
 // });
-import * as d3 from 'd3'
+
 
 // Load in the item - id key value pairs so we can map the auto complete text to an id for calling the GE api
 const updateItemInfo = (htmlId, itemInfo, prefix = '', color = 'black') => {
@@ -63,14 +63,14 @@ const getTrendColor = (trend) => {
 }
   
 // Update D3 format to be B instead of G for Billion
-// fcopy = d3.format;
-// function myFormat(){ 
-//         function_ret = fcopy.apply(d3, arguments) 
-//         return (function(args){return function (){ 
-//                 return args.apply(d3, arguments).replace(/G/, "B");
-//         }})(function_ret) 
-// } 
-// d3.format = myFormat;
+fcopy = d3.format;
+function myFormat(){ 
+        function_ret = fcopy.apply(d3, arguments) 
+        return (function(args){return function (){ 
+                return args.apply(d3, arguments).replace(/G/, "B");
+        }})(function_ret) 
+} 
+d3.format = myFormat;
 
 // List of the order player info is returned from the api hiscores
 let playerInfo = [
@@ -235,6 +235,7 @@ function getPlayer(options){
             if(splitArrItem.length > 2){
                 responseArr[i] = `"${playerInfo[i]}": ${splitArrItem[2]}`;
             }else{
+                let kc = parseInt(splitArrItem[1]) < 0 ? 0 : splitArrItem[1];
                 responseArr[i] = `"${playerInfo[i]}": "${splitArrItem[1]}"`;
             }
         }

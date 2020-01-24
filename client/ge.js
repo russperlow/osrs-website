@@ -1,5 +1,3 @@
-import * as d3 from 'd3'
-
 const parseDate = d3.timeParse('%Y-%m-%d');
 const key = d => d.date;
 
