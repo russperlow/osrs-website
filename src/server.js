@@ -66,6 +66,9 @@ const handleGet = (request, response, parsedUrl) => {
         case '/item-keys.json':
             jsonHandler.getItemKeys(request, response);
             break;
+        case '/logo.jpg':
+            htmlHandler.getLogo(request, response);
+            break;
         default:
             htmlHandler.getIndex(request, response);
             break;

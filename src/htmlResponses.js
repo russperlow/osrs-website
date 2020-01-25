@@ -4,7 +4,7 @@ const ge = fs.readFileSync(`${__dirname}/../client/ge.html`);
 const droprate = fs.readFileSync(`${__dirname}/../client/droprate.html`);
 const tracker = fs.readFileSync(`${__dirname}/../client/tracker.html`);
 const css = fs.readFileSync(`${__dirname}/../client/main.css`);
-
+const logo = fs.readFileSync(`${__dirname}/../client/logo.jpg`);
 const getIndex = (request, response) => {
     response.writeHead(200, {'Content-Type': 'text/html'});
     response.write(index);
@@ -35,10 +35,17 @@ const getCSS = (request, response) => {
     response.end();
 }
 
+const getLogo = (request, response) => {
+    response.writeHead(200, {'Content-Type': 'image/jpeg'});
+    response.write(logo);
+    response.end();
+}
+
 module.exports = {
     getIndex,
     getCSS,
     getGe,
     getDroprate,
     getTracker,
+    getLogo,
 };

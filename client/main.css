@@ -2,7 +2,6 @@ body{
   background: #343A40;
   height: 100%;
 }
-
 h1{
   text-align: center;
   color: steelblue;
@@ -10,7 +9,18 @@ h1{
 h3{
   text-align: center;
 }
-
+.page-title{
+  color: #6A0401;
+  text-shadow: 2px 2px 4px #000;
+  font-weight: bolder;
+  font-size: 42px;
+}
+.green-text{
+  color: #228B22;
+}
+.yellow-text{
+  color: #FFD700;
+}
 label{
   font-weight: bold;
 }
@@ -286,7 +296,7 @@ input:checked + .slider:before {
   margin-left: 25%;
   width: 50%;
   font-size: 24px;
-  color: whitesmoke;
+  color: #FFD700;
 }
 p.intro-text{
   margin-top: 1%;
@@ -297,7 +307,7 @@ p.intro-text{
 }
 h3.intro-title{
   margin-top: 2%;
-  color:whitesmoke;
+  color:#FFD700;
   margin-bottom: 1%;
   font-size: 21px;
 }
@@ -409,3 +419,8 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+a {color:#228B22;}         /* Unvisited link  */
+a:visited {color:#228B22;} /* Visited link    */
+a:hover {color:rgb(130, 34, 139);}   /* Mouse over link */
+a:active {color:rgb(139, 34, 107);}  /* Selected link   */
