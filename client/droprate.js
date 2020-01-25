@@ -225,7 +225,8 @@ document.getElementById('look-up-btn').addEventListener('click', function(e){
     let optionsObj = {
         method: 'GET',
         name: document.getElementById('player-name').value,
-        boss: boss.options[boss.selectedIndex].value
+        boss: boss.options[boss.selectedIndex].value,
+        lookup: 'boss',
     };
     getPlayer(optionsObj);
 });

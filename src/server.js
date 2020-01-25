@@ -66,6 +66,12 @@ const handleGet = (request, response, parsedUrl) => {
         case '/item-keys.json':
             jsonHandler.getItemKeys(request, response);
             break;
+        case '/tracker.html':
+            htmlHandler.getTracker(request, response);
+            break;
+        case '/tracker.js':
+            jsHandler.getTracker(request, response);
+            break;
         case '/logo.jpg':
             htmlHandler.getLogo(request, response);
             break;

@@ -32,3 +32,16 @@ const makeChart = (dataset) => {
     
 }
 
+const makeDataSet = (name, player) => {
+    debugger;
+}
+
+window.onload = function(){
+    let optionsObj = {
+        method: 'GET',
+        name: 'OldMiami',
+        boss: null,
+        lookup: 'skill',
+    };
+    getPlayer(optionsObj);
+}

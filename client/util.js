@@ -239,13 +239,17 @@ function getPlayer(options){
                 responseArr[i] = `"${playerInfo[i]}": "${splitArrItem[1]}"`;
             }
         }
+        debugger;
 
         // Add the players name the the array creating the player object
         let responseStr = `{"${options.name}":{${responseArr.toString()}}}`;
         player = JSON.parse(responseStr);
         
-        makeDataSet(player[options.name][options.boss], 1, petRates[options.boss]);
-
+        if(options.lookup === 'boss'){
+            makeDataSet(player[options.name][options.boss], 1, petRates[options.boss]);
+        }else if(options.lookup === 'skill'){
+            makeDataSet(options.name, player);
+        }
         // We've made our chart no need to show loading anymore
         hideLoadingWheel();
 
