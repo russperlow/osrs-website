@@ -239,7 +239,6 @@ function getPlayer(options){
                 responseArr[i] = `"${playerInfo[i]}": "${splitArrItem[1]}"`;
             }
         }
-        debugger;
 
         // Add the players name the the array creating the player object
         let responseStr = `{"${options.name}":{${responseArr.toString()}}}`;

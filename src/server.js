@@ -4,6 +4,7 @@ const query = require('querystring');
 const htmlHandler = require('./htmlResponses.js');
 const jsonHandler = require('./jsonResponses.js');
 const jsHandler = require('./jsResponses');
+const storeTracker = require('./storetracker');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
@@ -26,6 +27,26 @@ const handlePost = (request, response, parsedUrl) => {
             console.log('bodystring: ' + bodyString);
             jsonHandler.addUser(request, response, bodyParams);
         })
+    }else if(parsedUrl.pathname === '/storetracker'){
+        const body = [];
+
+        request.on('error', (err) => {
+            console.log(err);
+            response.statusCode = 400;
+            response.end();
+        });
+        request.on('data', (data) => {
+            console.log('data: ' + data);
+            body.push(data)
+        });
+
+        request.on('end', () => {
+            const bodyString = Buffer.concat(body).toString();
+            const bodyParams = query.parse(bodyString);
+            console.log(bodyParams)
+            console.log('bodystring: ' + bodyString);
+            storeTracker.writePlayerUpdate(bodyParams.name, bodyParams.overall, response);
+        });
     }else{
         console.log('else on post');
         console.log(parsedUrl);

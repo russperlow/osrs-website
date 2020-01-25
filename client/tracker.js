@@ -32,8 +32,18 @@ const makeChart = (dataset) => {
     
 }
 
-const makeDataSet = (name, player) => {
+const handleResponse = (xhr, parseResponse) => {
     debugger;
+}
+
+const makeDataSet = (name, player) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', "/storetracker");
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onload = () => handleResponse(xhr, true);
+    const data = `name=${name}&overall=${player[name].Overall}`;
+    xhr.send(data);
 }
 
 window.onload = function(){
