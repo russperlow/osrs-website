@@ -43,10 +43,27 @@ const handlePost = (request, response, parsedUrl) => {
         request.on('end', () => {
             const bodyString = Buffer.concat(body).toString();
             const bodyParams = query.parse(bodyString);
-            console.log(bodyParams)
-            console.log('bodystring: ' + bodyString);
+            //console.log(bodyParams)
+            //console.log('bodystring: ' + bodyString);
             storeTracker.writePlayerUpdate(bodyParams.name, bodyParams.overall, response);
         });
+    }else if(parsedUrl.pathname === '/storetrackerread'){
+        const body = [];
+
+        request.on('error', (err) => {
+            response.statusCode = 400;
+            response.end();
+        });
+
+        request.on('data', (data) => {
+            body.push(data);
+        });
+
+        request.on('end', () => {
+            const bodyString = Buffer.concat(body).toString();
+            const bodyParams = query.parse(bodyString);
+            storeTracker.readPlayerFile(bodyParams.name, bodyParams.overall, response);
+        })
     }else{
         console.log('else on post');
         console.log(parsedUrl);

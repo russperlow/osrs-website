@@ -248,6 +248,8 @@ function getPlayer(options){
             makeDataSet(player[options.name][options.boss], 1, petRates[options.boss]);
         }else if(options.lookup === 'skill'){
             makeDataSet(options.name, player);
+        }else if(options.lookup === 'file-read'){
+            makeDataSetFromFile(options.name, player);
         }
         // We've made our chart no need to show loading anymore
         hideLoadingWheel();
